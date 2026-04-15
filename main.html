@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片</title>
+
+    <link rel="stylesheet" href="./display/styles/main.css">
+</head>
+
+<body>
+    <!-- MathJax Configuration -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            }
+        };
+    </script>
+    <script src="./MathJax-3.2.2/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+
+    <!-- Zoom Info -->
+    <div class="zoom-info" id="zoomInfo">缩放: 100%</div>
+
+    <!-- Menu Container -->
+    <div class="context-menu" id="contextMenu"></div>
+
+    <!-- Sidebar Container -->
+    <div id="propertiesSidebar" class="sidebar">
+        <h2>Properties</h2>
+        <div id="sidebarContent"></div>
+    </div>
+
+    <script type="module" src="./display/scripts/main.js"></script>
+</body>

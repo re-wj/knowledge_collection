@@ -1,0 +1,52 @@
+.card {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    min-width: 150px;
+    min-height: 100px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    resize: both;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform-origin: 0 0;
+    will-change: transform, left, top;
+}
+
+.drag-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.1);
+    cursor: move;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 -30 50 50"><path fill="black" d="M-3 -3 l0 12 l-6 0 l9 9 l9 -9 l-6 0 l0 -12 l12 0 l0 6 l9 -9 l-9 -9 l0 6 l-12 0 l0 -12 l6 0 l-9 -9 l-9 9 l6 0 l0 12 l-12 0 l0 -6 l-9 9 l9 9 l0 -6 l12 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65% 65%;
+}
+
+.title-area {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    user-select: none;
+}
+
+.title {
+    font-weight: bold;
+    outline: none;
+    min-height: 20px;
+}
+
+.original-content {
+    display: none;
+}
+
+.display-content {
+    padding: 5px;
+    height: calc(100% - 30px);
+    overflow: auto;
+    outline: none;
+    min-height: 50px;
+}

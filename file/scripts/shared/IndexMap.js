@@ -1,0 +1,1 @@
+export const indexMap = new Map(); // {id: {title, parentId}}

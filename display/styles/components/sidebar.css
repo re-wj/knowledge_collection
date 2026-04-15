@@ -1,0 +1,105 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-left: 1px solid #dee2e6;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.sidebar.show {
+    right: 0;
+}
+
+.sidebar .property-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .property-item label {
+    margin-right: 10px;
+    width: 50px;
+    font-family: monospace;
+    flex-shrink: 0;
+}
+
+.sidebar .property-item input,
+.sidebar .property-item select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.sidebar .property-item-vertical {
+    margin-bottom: 15px;
+}
+
+.sidebar .property-item-vertical strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sidebar .property-controls {
+    margin-left: 10px;
+}
+
+.sidebar .property-controls .btn-link:not(:last-child) {
+    margin-right: 8px;
+}
+
+/* highlighted cards */
+.highlight-dir-parent {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 255, 0.8);
+}
+.highlight-logic-parent {
+    box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8);
+}
+.highlight-both-parents {
+    box-shadow: 0 0 10px 2px rgba(255, 0, 255, 0.8);
+}
+
+.sidebar .btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1em;
+}
+
+.sidebar details {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.sidebar summary {
+    cursor: pointer;
+    outline: none;
+}
+
+.sidebar #logic-parents-list,
+.sidebar #selected-cards-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.sidebar #logic-parents-list li,
+.sidebar #selected-cards-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    border-bottom: 1px solid #eee;
+}

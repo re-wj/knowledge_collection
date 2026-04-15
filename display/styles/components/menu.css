@@ -1,0 +1,41 @@
+.context-menu {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+    display: none;
+    transform: scale(1) !important;
+}
+.context-menu-item {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+.context-menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+.has-submenu {
+    position: relative;
+}
+
+.submenu-arrow {
+    float: right;
+    margin-left: 10px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -5px; /* aligning with the parent menu item*/
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 150px;
+    z-index: 1001;
+}
+
+.has-submenu:hover > .submenu {
+    display: block;
+}
