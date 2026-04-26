@@ -263,6 +263,12 @@ function showTreeSelector(tree, type) {
                     
                     const label = document.createElement('span');
                     label.textContent = title || '_untitled';
+                    label.style.cssText = `
+                        word-break: break-word;
+                        white-space: normal;
+                        max-width: 30ch;
+                        min-width: 20ch;
+                    `;
                     row.appendChild(label);
                     
                     nodeDiv.appendChild(row);
@@ -297,6 +303,12 @@ function showTreeSelector(tree, type) {
                     
                     const label = document.createElement('span');
                     label.textContent = title || '_untitled';
+                    label.style.cssText = `
+                        word-break: break-word;
+                        white-space: normal;
+                        max-width: 30ch;
+                        min-width: 20ch;
+                    `;
                     row.appendChild(label);
                     nodeDiv.appendChild(row);
                 }

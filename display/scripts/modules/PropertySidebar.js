@@ -386,6 +386,7 @@ export function renderCardSidebar(card) {
                 <div class="property-controls">
                     <button id="change-dir-parent" class="btn-link">Change</button>
                     <button id="set-root-dir-parent" class="btn-link">Set Root</button>
+                    <button id="set-temp-dir-parent" class="btn-link">Set Temp</button>
                 </div>
             </div>
             <span id="dir-parent-display">${getTitleById(currentDirParent)}</span>
@@ -447,6 +448,17 @@ export function renderCardSidebar(card) {
             const display = document.getElementById('dir-parent-display');
             display.textContent = `?_ROOT`;
             display.dataset.tempParentInfo = 'ROOT';
+            changeDirParentBtn.textContent = 'Confirm?';
+        }
+    });
+
+    const setTempDirParentBtn = document.getElementById('set-temp-dir-parent')
+    setTempDirParentBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        if(card) {
+            const display = document.getElementById('dir-parent-display');
+            display.textContent = `?_TEMP`;
+            display.dataset.tempParentInfo = 'TEMP';
             changeDirParentBtn.textContent = 'Confirm?';
         }
     });

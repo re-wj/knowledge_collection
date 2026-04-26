@@ -8,6 +8,10 @@ import { indexMap } from '../shared/IndexMap.js';
 // save with File System Access API
 export async function saveCardToFile(data, isBulkUpdate=false) {
     const filename = data.id;
+    if (!indexMap.get(data.dirParent) && data.dirParent !== 'ROOT') {
+        console.error(`failed to save card ${filename} due to unsaved parent`);
+        return null;
+    }
     try {
         const storageDirHandle = await getSavedDirHandle();
 
@@ -24,8 +28,8 @@ export async function saveCardToFile(data, isBulkUpdate=false) {
             // asking whether to overwrite if the file exists
             if (!confirm(`相同ID文件${filename}.json (${indexMap.get(filename)?.title || '_unknown'}) 已存在。\n\n点击“确定”覆盖。`)) {
                 if (confirm(`是否分配新ID存储在相同位置？`)) return `id-reassignment`;
+                return null;
             }
-            return null;
         }
 
         // creating or overwriting the file
